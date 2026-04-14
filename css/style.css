@@ -1,0 +1,275 @@
+/* =============================================================
+   Shortly – Custom Stylesheet
+   Style guide source: ../style-guide.md
+   Structure:
+   1. Design Tokens (CSS Custom Properties)
+   2. Reset & Base
+   3. Typography
+   4. Utilities / Shared Components
+   5. Navbar
+   6. Hero
+   7. Shortener Form
+   8. Results List
+   9. Statistics Section
+   10. CTA Banner
+   11. Footer
+   12. Media Queries
+   ============================================================= */
+
+
+/* =============================================================
+   1. DESIGN TOKENS
+   ============================================================= */
+:root {
+  /* Primary */
+  --color-cyan:         hsl(180, 66%, 49%);
+  --color-cyan-hover:   hsl(180, 66%, 65%);
+  --color-dark-violet:  hsl(257, 27%, 26%);
+
+  /* Secondary */
+  --color-red:          hsl(0, 87%, 67%);
+
+  /* Neutral */
+  --color-gray:         hsl(0, 0%, 75%);
+  --color-grayish-violet: hsl(257, 7%, 63%);
+  --color-very-dark-blue: hsl(255, 11%, 22%);
+  --color-very-dark-violet: hsl(260, 8%, 14%);
+
+  /* Backgrounds */
+  --color-bg-body:      hsl(0, 0%, 99%);
+  --color-bg-stats:     hsl(220, 24%, 96%);
+
+  /* Typography — from style-guide.md */
+  --font-family:        'Poppins', sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-bold:   700;
+  --font-size-body:     18px;
+
+  /* Spacing shorthand */
+  --container-max:      1110px;
+  --section-padding-y:  5rem;
+
+  /* Transitions */
+  --transition-fast:    0.2s ease;
+}
+
+
+/* =============================================================
+   2. RESET & BASE
+   ============================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--color-bg-body);
+  color: var(--color-grayish-violet);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+
+/* =============================================================
+   3. TYPOGRAPHY
+   ============================================================= */
+h1, h2, h3 {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-very-dark-blue);
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); }
+h3 { font-size: 1.25rem; }
+
+p {
+  line-height: 1.75;
+}
+
+
+/* =============================================================
+   4. UTILITIES / SHARED COMPONENTS
+   ============================================================= */
+
+/* Teal pill button — used in Navbar, Hero, CTA */
+.btn-cyan {
+  display: inline-block;
+  background-color: var(--color-cyan);
+  color: #fff;
+  font-weight: var(--font-weight-bold);
+  font-size: 0.95rem;
+  padding: 0.6rem 1.6rem;
+  border-radius: 100px;
+  border: none;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-cyan:hover,
+.btn-cyan:focus-visible {
+  background-color: var(--color-cyan-hover);
+  color: #fff;
+}
+
+/* Page-width container override */
+.container-shortly {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Attribution  */
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+  padding: 1rem;
+  color: var(--color-gray);
+}
+
+.attribution a {
+  color: var(--color-cyan);
+}
+
+
+/* =============================================================
+   5. NAVBAR
+   ============================================================= */
+.site-header {
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* --- Bootstrap navbar overrides --- */
+.navbar {
+  padding-block: 1.5rem;
+}
+
+/* Logo */
+.navbar__logo {
+  height: 1.5rem;
+  width: auto;
+}
+
+/* Nav links (Features / Pricing / Resources) */
+.navbar__nav .nav-link {
+  color: var(--color-grayish-violet);
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+  padding-inline: 0.85rem;
+  transition: color var(--transition-fast);
+}
+
+.navbar__nav .nav-link:hover,
+.navbar__nav .nav-link:focus-visible {
+  color: var(--color-very-dark-blue);
+}
+
+
+/* Right-side auth links */
+.navbar__auth .nav-link {
+  color: var(--color-grayish-violet);
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+  padding-inline: 0.85rem;
+  transition: color var(--transition-fast);
+}
+
+.navbar__auth .nav-link:hover,
+.navbar__auth .nav-link:focus-visible {
+  color: var(--color-very-dark-blue);
+}
+
+/* Hamburger button */
+.navbar-toggler {
+  border: none;
+  padding: 0;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 4px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='hsl(255,11%%2C22%25)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ---- Mobile nav dropdown card ---- */
+.navbar-collapse {
+}
+
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    background-color: var(--color-dark-violet);
+    border-radius: 0.625rem;
+    margin-top: 1.5rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  /* Mobile nav links override */
+  .navbar__nav .nav-link {
+    color: #fff;
+    font-size: 1.125rem;
+    padding-block: 0.6rem;
+  }
+
+  .navbar__nav .nav-link:hover {
+    color: var(--color-cyan);
+  }
+
+  .navbar__auth .nav-link {
+    color: #fff;
+    font-size: 1.125rem;
+    padding-block: 0.6rem;
+  }
+
+  .navbar__auth .nav-link:hover {
+    color: var(--color-cyan);
+  }
+
+  /* Sign Up button fills width on mobile */
+  .navbar__auth .btn-cyan {
+    display: block;
+    width: 100%;
+    padding-block: 0.75rem;
+    margin-top: 0.5rem;
+  }
+}
