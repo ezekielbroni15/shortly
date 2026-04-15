@@ -46,7 +46,7 @@
   --font-size-body:     18px;
 
   /* Spacing shorthand */
-  --container-max:      1110px;
+  --container-max:      1380px;
   --section-padding-y:  5rem;
 
   /* Transitions */
@@ -238,43 +238,135 @@ p {
     background-color: var(--color-dark-violet);
     border-radius: 0.625rem;
     margin-top: 1.5rem;
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem; /* Increased top/bottom padding */
     text-align: center;
   }
 
-  /* Mobile horizontal divider between nav links and auth links */
   .navbar__mobile-divider {
-    border-color: rgba(255, 255, 255, 0.15);
-    margin-block: 1rem;
-    opacity: 1;
+    border-color: var(--color-grayish-violet); /* Slightly darker divider */
+    margin-block: 1.5rem;
+    opacity: 0.25;
   }
 
   /* Mobile nav links override */
-  .navbar__nav .nav-link {
-    color: #fff;
-    font-size: 1.125rem;
-    padding-block: 0.6rem;
-  }
-
-  .navbar__nav .nav-link:hover {
-    color: var(--color-cyan);
-  }
-
+  .navbar__nav .nav-link,
   .navbar__auth .nav-link {
     color: #fff;
     font-size: 1.125rem;
-    padding-block: 0.6rem;
+    font-weight: var(--font-weight-bold);
+    padding-block: 1rem; /* More spacing between links */
   }
 
+  .navbar__nav .nav-link:hover,
   .navbar__auth .nav-link:hover {
     color: var(--color-cyan);
   }
 
-  /* Sign Up button fills width on mobile */
   .navbar__auth .btn-cyan {
     display: block;
     width: 100%;
-    padding-block: 0.75rem;
+    padding-block: 0.85rem; /* Taller button on mobile */
     margin-top: 0.5rem;
+  }
+}
+
+
+/* =============================================================
+   6. HERO - Refined for Pixel Perfection
+   ============================================================= */
+.hero {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  /* CRITICAL: Use overflow-x: clip on the section to allow 
+     the image to bleed out without creating a scrollbar */
+  overflow-x: clip; 
+}
+
+.hero__inner {
+  position: relative;
+}
+
+/* ---- Text column ---- */
+.hero__text-col {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.hero__heading {
+  font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-very-dark-blue);
+  line-height: 1.15;
+  letter-spacing: -2px; 
+  margin-bottom: 1rem;
+}
+
+.hero__subtext {
+  color: var(--color-grayish-violet);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  max-width: 38ch;
+  margin-bottom: 2.2rem;
+}
+
+/* ---- Illustration column ---- */
+.hero__img-col {
+  position: relative;
+  /* Ensure the column itself doesn't restrict the image size */
+  display: flex;
+  align-items: center;
+}
+
+.hero__illustration {
+  display: block;
+  height: auto;
+  object-fit: contain;
+  /* Overriding Bootstrap's max-width to allow the bleed */
+  max-width: none; 
+}
+
+/* ---- Responsive Adjustments ---- */
+
+/* Tablet and Laptop (768px and up) */
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 4rem;
+  }
+
+  .hero__illustration {
+    /* Scaled up and shifted right to match desktop-design.jpg */
+    width: 135%; 
+    transform: translateX(50px); 
+  }
+}
+
+/* Mobile Specific (Matches mobile-design.jpg) */
+@media (max-width: 767.98px) {
+  .hero {
+    text-align: center;
+    padding-bottom: 10rem; /* Space for the stacked form later */
+  }
+
+  .hero__img-col {
+    order: -1; /* Image stays on top for mobile */
+    margin-bottom: 2rem;
+    padding: 0; /* Remove padding to let image reach edges */
+  }
+
+  .hero__illustration {
+    /* Shifted slightly to the right as requested */
+    width: 145%; 
+    margin-left: 5%; 
+  }
+
+  .hero__heading {
+    font-size: 2.6rem;
+    letter-spacing: -1px;
+  }
+
+  .hero__subtext {
+    margin-inline: auto;
+    font-size: 1.1rem;
+    padding-inline: 1rem;
   }
 }
