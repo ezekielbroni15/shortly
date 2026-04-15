@@ -261,7 +261,7 @@ p {
    ============================================================= */
 .hero {
   padding-top: 2rem;
-  padding-bottom: 10rem; 
+  padding-bottom: 10rem;
   overflow-x: clip;
 }
 
@@ -726,7 +726,7 @@ p {
 }
 
 .cta-banner__heading {
-  color: #fff; 
+  color: #fff;
   font-size: clamp(1.6rem, 3.5vw, 2.5rem);
   margin-bottom: 2rem;
 }
@@ -749,7 +749,6 @@ p {
     margin-bottom: 1.5rem;
   }
 }
-
 
 /* =============================================================
    11. FOOTER
@@ -813,7 +812,7 @@ p {
 
 .site-footer__social-link {
   display: block;
-  line-height: 0; 
+  line-height: 0;
   transition: opacity var(--transition-fast);
 }
 
@@ -826,8 +825,8 @@ p {
 
 .site-footer__social-link:hover img,
 .site-footer__social-link:focus-visible img {
-  filter: brightness(0) saturate(100%) invert(67%) sepia(62%)
-    saturate(469%) hue-rotate(127deg) brightness(97%) contrast(87%);
+  filter: brightness(0) saturate(100%) invert(67%) sepia(62%) saturate(469%)
+    hue-rotate(127deg) brightness(97%) contrast(87%);
 }
 
 /* ---- Footer Mobile ---- */
