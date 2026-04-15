@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,7 +12,12 @@
     <title>Shortly | URL Shortening &amp; Link Management</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
 
     <!-- Google Fonts: Poppins 500 & 700 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,14 +40,12 @@
   </head>
 
   <body>
-
     <!-- =============================================
          HEADER / NAVBAR
          ============================================= -->
     <header class="site-header">
       <nav class="navbar navbar-expand-md" aria-label="Primary navigation">
         <div class="container-shortly d-flex align-items-center w-100">
-
           <!-- Logo -->
           <a class="navbar-brand p-0" href="/" aria-label="Shortly home">
             <img
@@ -69,7 +72,6 @@
 
           <!-- Collapsible nav content -->
           <div class="collapse navbar-collapse" id="primary-nav">
-
             <!-- Left nav links -->
             <ul class="navbar__nav nav ms-md-4 me-auto" role="list">
               <li class="nav-item">
@@ -95,29 +97,26 @@
                 <a class="btn-cyan" href="#" role="button">Sign Up</a>
               </li>
             </ul>
-
-          </div><!-- /navbar-collapse -->
-        </div><!-- /container -->
+          </div>
+          <!-- /navbar-collapse -->
+        </div>
+        <!-- /container -->
       </nav>
     </header>
 
     <main id="main-content">
-
       <!-- =============================================
            HERO SECTION
            ============================================= -->
       <section class="hero" aria-label="Hero">
         <div class="container-shortly hero__inner">
           <div class="row align-items-center">
-
             <!-- Text column -->
             <div class="col-12 col-md-6 hero__text-col order-2 order-md-1">
-              <h1 class="hero__heading">
-                More than just shorter links
-              </h1>
+              <h1 class="hero__heading">More than just shorter links</h1>
               <p class="hero__subtext">
-                Build your brand's recognition and get detailed insights
-                on how your links are performing.
+                Build your brand's recognition and get detailed insights on how
+                your links are performing.
               </p>
               <a href="#shorten-form" class="btn-cyan hero__cta">Get Started</a>
             </div>
@@ -134,48 +133,83 @@
                 />
               </div>
             </div>
-
-          </div><!-- /row -->
-        </div><!-- /container -->
-      </section>
-
-      <!-- =============================================
-           URL SHORTENER FORM + RESULTS
-           ============================================= -->
-      <section class="shortener" aria-label="URL Shortener">
-
-        <!-- Shorten form -->
-        <div class="shortener__form-wrapper">
+          </div>
+          <!-- /row -->
         </div>
-        <ul
-          class="shortener__results"
-          id="results-list"
-          role="list"
-          aria-label="Shortened links"
-          aria-live="polite"
-        ></ul>
-
+        <!-- /container -->
       </section>
 
       <!-- =============================================
-           ADVANCED STATISTICS
+           GRAY BACKGROUND WRAPPER
+           The shortener card straddles the white hero / gray stats
+           boundary using a negative margin-top on the card.
            ============================================= -->
-      <section class="statistics" aria-labelledby="stats-heading">
-      </section>
+      <div class="gray-section">
+        <!-- URL SHORTENER FORM + RESULTS -->
+        <section class="shortener" id="shorten-form" aria-label="URL Shortener">
+          <div class="container-shortly">
+            <!-- Dark purple card with SVG background -->
+            <div class="shortener__card">
+              <form class="shortener__form" id="url-form" novalidate>
+                <!-- Input + error -->
+                <div class="shortener__input-group">
+                  <input
+                    type="url"
+                    class="shortener__input"
+                    id="url-input"
+                    placeholder="Shorten a link here..."
+                    aria-label="Enter a URL to shorten"
+                    aria-describedby="error-msg"
+                    autocomplete="off"
+                  />
+                  <p
+                    class="shortener__error"
+                    id="error-msg"
+                    role="alert"
+                    aria-live="assertive"
+                  >
+                    Please add a link
+                  </p>
+                </div>
+
+                <!-- Submit button -->
+                <button
+                  type="submit"
+                  class="btn-cyan shortener__btn"
+                  id="shorten-btn"
+                >
+                  Shorten It!
+                </button>
+              </form>
+            </div>
+
+            <ul
+              class="shortener__results"
+              id="results-list"
+              role="list"
+              aria-label="Shortened links"
+              aria-live="polite"
+            ></ul>
+          </div>
+        </section>
+        <!-- /shortener -->
+
+        <!-- =============================================
+             ADVANCED STATISTICS
+             ============================================= -->
+        <section class="statistics" aria-labelledby="stats-heading"></section>
+      </div>
 
       <!-- =============================================
            CTA BANNER
            ============================================= -->
-      <section class="cta-banner" aria-label="Call to action">
-      </section>
-
+      <section class="cta-banner" aria-label="Call to action"></section>
     </main>
 
     <!-- =============================================
          FOOTER
          ============================================= -->
-    <footer class="site-footer" role="contentinfo">
-    </footer>
+    <footer class="site-footer" role="contentinfo"></footer>
 
     <!-- Bootstrap 5 JS Bundle -->
     <script
@@ -186,6 +220,5 @@
 
     <!-- Custom Script -->
     <script src="js/main.js"></script>
-
   </body>
 </html>

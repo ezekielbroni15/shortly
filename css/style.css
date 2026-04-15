@@ -16,43 +16,41 @@
    12. Media Queries
    ============================================================= */
 
-
 /* =============================================================
    1. DESIGN TOKENS
    ============================================================= */
 :root {
   /* Primary */
-  --color-cyan:         hsl(180, 66%, 49%);
-  --color-cyan-hover:   hsl(180, 66%, 65%);
-  --color-dark-violet:  hsl(257, 27%, 26%);
+  --color-cyan: hsl(180, 66%, 49%);
+  --color-cyan-hover: hsl(180, 66%, 65%);
+  --color-dark-violet: hsl(257, 27%, 26%);
 
   /* Secondary */
-  --color-red:          hsl(0, 87%, 67%);
+  --color-red: hsl(0, 87%, 67%);
 
   /* Neutral */
-  --color-gray:         hsl(0, 0%, 75%);
+  --color-gray: hsl(0, 0%, 75%);
   --color-grayish-violet: hsl(257, 7%, 63%);
   --color-very-dark-blue: hsl(255, 11%, 22%);
   --color-very-dark-violet: hsl(260, 8%, 14%);
 
   /* Backgrounds */
-  --color-bg-body:      hsl(0, 0%, 99%);
-  --color-bg-stats:     hsl(220, 24%, 96%);
+  --color-bg-body: hsl(0, 0%, 99%);
+  --color-bg-stats: hsl(220, 24%, 96%);
 
   /* Typography — from style-guide.md */
-  --font-family:        'Poppins', sans-serif;
+  --font-family: "Poppins", sans-serif;
   --font-weight-medium: 500;
-  --font-weight-bold:   700;
-  --font-size-body:     18px;
+  --font-weight-bold: 700;
+  --font-size-body: 18px;
 
   /* Spacing shorthand */
-  --container-max:      1380px;
-  --section-padding-y:  5rem;
+  --container-max: 1380px;
+  --section-padding-y: 5rem;
 
   /* Transitions */
-  --transition-fast:    0.2s ease;
+  --transition-fast: 0.2s ease;
 }
-
 
 /* =============================================================
    2. RESET & BASE
@@ -103,24 +101,30 @@ button {
   font-weight: var(--font-weight-bold);
 }
 
-
 /* =============================================================
    3. TYPOGRAPHY
    ============================================================= */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: var(--font-weight-bold);
   color: var(--color-very-dark-blue);
   line-height: 1.2;
 }
 
-h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
-h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); }
-h3 { font-size: 1.25rem; }
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+}
+h3 {
+  font-size: 1.25rem;
+}
 
 p {
   line-height: 1.75;
 }
-
 
 /* =============================================================
    4. UTILITIES / SHARED COMPONENTS
@@ -164,7 +168,6 @@ p {
   color: var(--color-cyan);
 }
 
-
 /* =============================================================
    5. NAVBAR
    ============================================================= */
@@ -200,7 +203,6 @@ p {
   color: var(--color-very-dark-blue);
 }
 
-
 /* Right-side auth links */
 .navbar__auth .nav-link {
   color: var(--color-grayish-violet);
@@ -231,19 +233,17 @@ p {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='hsl(255,11%%2C22%25)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-
-
 @media (max-width: 767.98px) {
   .navbar-collapse {
     background-color: var(--color-dark-violet);
     border-radius: 0.625rem;
     margin-top: 1.5rem;
-    padding: 2.5rem 1.5rem; /* Increased top/bottom padding */
+    padding: 2.5rem 1.5rem;
     text-align: center;
   }
 
   .navbar__mobile-divider {
-    border-color: var(--color-grayish-violet); /* Slightly darker divider */
+    border-color: var(--color-grayish-violet);
     margin-block: 1.5rem;
     opacity: 0.25;
   }
@@ -254,7 +254,7 @@ p {
     color: #fff;
     font-size: 1.125rem;
     font-weight: var(--font-weight-bold);
-    padding-block: 1rem; /* More spacing between links */
+    padding-block: 1rem;
   }
 
   .navbar__nav .nav-link:hover,
@@ -265,21 +265,18 @@ p {
   .navbar__auth .btn-cyan {
     display: block;
     width: 100%;
-    padding-block: 0.85rem; /* Taller button on mobile */
+    padding-block: 0.85rem;
     margin-top: 0.5rem;
   }
 }
-
 
 /* =============================================================
    6. HERO - Refined for Pixel Perfection
    ============================================================= */
 .hero {
   padding-top: 2rem;
-  padding-bottom: 5rem;
-  /* CRITICAL: Use overflow-x: clip on the section to allow 
-     the image to bleed out without creating a scrollbar */
-  overflow-x: clip; 
+  padding-bottom: 10rem; /* Increased padding for mobile */
+  overflow-x: clip;
 }
 
 .hero__inner {
@@ -297,7 +294,7 @@ p {
   font-weight: var(--font-weight-bold);
   color: var(--color-very-dark-blue);
   line-height: 1.15;
-  letter-spacing: -2px; 
+  letter-spacing: -2px;
   margin-bottom: 1rem;
 }
 
@@ -312,7 +309,6 @@ p {
 /* ---- Illustration column ---- */
 .hero__img-col {
   position: relative;
-  /* Ensure the column itself doesn't restrict the image size */
   display: flex;
   align-items: center;
 }
@@ -321,8 +317,7 @@ p {
   display: block;
   height: auto;
   object-fit: contain;
-  /* Overriding Bootstrap's max-width to allow the bleed */
-  max-width: none; 
+  max-width: none;
 }
 
 /* ---- Responsive Adjustments ---- */
@@ -331,32 +326,30 @@ p {
 @media (min-width: 768px) {
   .hero {
     padding-top: 4rem;
+    padding-bottom: 12rem;
   }
 
   .hero__illustration {
-    /* Scaled up and shifted right to match desktop-design.jpg */
-    width: 135%; 
-    transform: translateX(50px); 
+    width: 135%;
+    transform: translateX(50px);
   }
 }
 
-/* Mobile Specific (Matches mobile-design.jpg) */
+/* Mobile Specific */
 @media (max-width: 767.98px) {
   .hero {
     text-align: center;
-    padding-bottom: 10rem; /* Space for the stacked form later */
   }
 
   .hero__img-col {
-    order: -1; /* Image stays on top for mobile */
+    order: -1;
     margin-bottom: 2rem;
-    padding: 0; /* Remove padding to let image reach edges */
+    padding: 0;
   }
 
   .hero__illustration {
-    /* Shifted slightly to the right as requested */
-    width: 145%; 
-    margin-left: 5%; 
+    width: 145%;
+    margin-left: 5%;
   }
 
   .hero__heading {
@@ -368,5 +361,216 @@ p {
     margin-inline: auto;
     font-size: 1.1rem;
     padding-inline: 1rem;
+  }
+}
+
+/* =============================================================
+   7. SHORTENER FORM
+   ============================================================= */
+
+.gray-section {
+  background-color: var(--color-bg-stats);
+  display: flow-root;
+}
+
+.shortener {
+  position: relative;
+  padding-bottom: 2rem;
+}
+.shortener__card {
+  background-color: var(--color-dark-violet);
+  background-image: url("../images/bg-shorten-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  border-radius: 0.625rem;
+  padding: 3.25rem;
+  margin-top: -5.25rem;
+  position: relative;
+  z-index: 10;
+}
+
+.shortener__form {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.shortener__input-group {
+  flex-grow: 1;
+  position: relative;
+}
+
+/* The URL text input */
+.shortener__input {
+  width: 100%;
+  height: 4rem;
+  border-radius: 0.625rem;
+  border: 3px solid transparent;
+  padding-inline: 2rem;
+  font-family: var(--font-family);
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-very-dark-blue);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.shortener__input::placeholder {
+  color: var(--color-gray);
+}
+
+.shortener__input:focus {
+  border-color: var(--color-cyan);
+}
+
+.shortener__form.is-error .shortener__input {
+  border-color: var(--color-red);
+}
+
+.shortener__form.is-error .shortener__input::placeholder {
+  color: rgba(244, 98, 98, 0.5);
+}
+
+.shortener__error {
+  display: none;
+  color: var(--color-red);
+  font-style: italic;
+  font-size: 0.875rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
+
+.shortener__form.is-error .shortener__error {
+  display: block;
+}
+
+.shortener__btn {
+  border-radius: 0.625rem;
+  font-size: 1rem;
+  padding: 0 2.2rem;
+  height: 4rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* =============================================================
+   8. RESULTS LIST
+   ============================================================= */
+.shortener__results {
+  margin-top: 1.5rem;
+}
+
+.shortener__result-item {
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+
+.shortener__url-original {
+  color: var(--color-very-dark-blue);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shortener__result-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.shortener__url-short {
+  color: var(--color-cyan);
+}
+
+.shortener__copy-btn {
+  border-radius: 5px;
+  font-size: 0.95rem;
+  min-width: 100px;
+}
+
+.shortener__copy-btn.copied {
+  background-color: var(--color-dark-violet);
+}
+
+/* ---- Shortener + Results Mobile ---- */
+@media (max-width: 767.98px) {
+  .shortener__card {
+    background-image: url("../images/bg-shorten-mobile.svg");
+    background-position: top right;
+    padding: 1.5rem;
+    margin-top: -5rem;
+  }
+
+  .shortener__form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .shortener__form.is-error {
+    gap: 2.2rem;
+  }
+
+  .shortener__input-group {
+    width: 100%;
+  }
+
+  .shortener__input {
+    height: 3rem;
+    border-radius: 0.3125rem;
+    font-size: 1rem;
+    padding-inline: 1rem;
+  }
+
+  .shortener__error {
+    position: absolute;
+    top: 3.2rem;
+    left: 0;
+    font-size: 0.75rem;
+    margin-top: 0;
+  }
+
+  .shortener__btn {
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.3125rem;
+    font-size: 1.125rem;
+    padding-inline: 0;
+  }
+
+  .shortener__result-item {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .shortener__url-original {
+    padding: 1rem 1rem 0.75rem;
+    border-bottom: 1px solid rgba(158, 154, 154, 0.2);
+    font-size: 1rem;
+  }
+
+  .shortener__result-right {
+    flex-direction: column;
+    padding: 0.75rem 1rem 1rem;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .shortener__url-short {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .shortener__copy-btn {
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 5px;
   }
 }
