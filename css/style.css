@@ -114,7 +114,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  /* font-size set per-component (.hero__heading) for design precision */
 }
 h2 {
   font-size: clamp(1.6rem, 3vw, 2.5rem);
@@ -140,7 +140,7 @@ p {
   font-size: 0.95rem;
   padding: 0.6rem 1.6rem;
   border-radius: 100px;
-  border: none;
+  /* border: none already set by global button rule */
   transition: background-color var(--transition-fast);
 }
 
@@ -190,21 +190,8 @@ p {
   width: auto;
 }
 
-/* Nav links (Features / Pricing / Resources) */
-.navbar__nav .nav-link {
-  color: var(--color-grayish-violet);
-  font-size: 0.9rem;
-  font-weight: var(--font-weight-bold);
-  padding-inline: 0.85rem;
-  transition: color var(--transition-fast);
-}
-
-.navbar__nav .nav-link:hover,
-.navbar__nav .nav-link:focus-visible {
-  color: var(--color-very-dark-blue);
-}
-
-/* Right-side auth links */
+/* Nav links — shared styles for both .navbar__nav and .navbar__auth */
+.navbar__nav .nav-link,
 .navbar__auth .nav-link {
   color: var(--color-grayish-violet);
   font-size: 0.9rem;
@@ -213,6 +200,8 @@ p {
   transition: color var(--transition-fast);
 }
 
+.navbar__nav .nav-link:hover,
+.navbar__nav .nav-link:focus-visible,
 .navbar__auth .nav-link:hover,
 .navbar__auth .nav-link:focus-visible {
   color: var(--color-very-dark-blue);
@@ -315,7 +304,7 @@ p {
 }
 
 .hero__illustration {
-  display: block;
+  /* display:block already set by global img rule */
   height: auto;
   object-fit: contain;
   max-width: none;
@@ -323,8 +312,8 @@ p {
 
 /* ---- Responsive Adjustments ---- */
 
-/* Tablet and Laptop (768px and up) */
-@media (min-width: 768px) {
+/* Desktop-only hero adjustments (≥992px matches our lg breakpoint) */
+@media (min-width: 992px) {
   .hero {
     padding-top: 4rem;
     padding-bottom: 12rem;
@@ -592,7 +581,7 @@ p {
 
 .statistics__heading {
   font-size: clamp(1.75rem, 3vw, 2.35rem);
-  color: var(--color-very-dark-blue);
+  /* color already set by global h1,h2,h3 rule */
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
 }
@@ -626,10 +615,6 @@ p {
   z-index: 1;
 }
 
-.statistics__col--1 {
-  margin-top: 0;
-}
-
 .statistics__col--2 {
   margin-top: 2.75rem;
 }
@@ -644,7 +629,6 @@ p {
   border-radius: 0.35rem;
   padding: 4.9rem 2rem 2.2rem;
   min-height: 16.8rem;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .statistics__icon-badge {
@@ -670,9 +654,8 @@ p {
 .statistics__card-title {
   font-size: 1.35rem;
   line-height: 1.3;
-  color: var(--color-very-dark-blue);
+  /* color + font-weight already set by global h1,h2,h3 rule */
   margin-bottom: 1rem;
-  font-weight: var(--font-weight-bold);
 }
 
 .statistics__card-body {
@@ -694,8 +677,7 @@ p {
     padding-left: 0;
     padding-right: 0;
     margin-bottom: 4rem;
-    position: relative;
-    z-index: 1;
+    /* position:relative and z-index:1 already set by the desktop rule above */
   }
 
   .statistics__col:last-child {
@@ -737,5 +719,151 @@ p {
     background-color: var(--color-cyan);
     z-index: 0;
     display: block;
+  }
+}
+
+/* =============================================================
+   10. CTA BANNER
+   ============================================================= */
+.cta-banner {
+  background-color: var(--color-dark-violet);
+  background-image: url("../images/bg-boost-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-block: 5.5rem;
+}
+
+.cta-banner__heading {
+  color: #fff; 
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  margin-bottom: 2rem;
+}
+
+.cta-banner__btn {
+  font-size: 1.1rem;
+  padding: 0.75rem 2.5rem;
+}
+
+/* ---- Mobile CTA ---- */
+@media (max-width: 991.98px) {
+  .cta-banner {
+    background-image: url("../images/bg-boost-mobile.svg");
+    background-position: top right;
+    padding-block: 5rem;
+  }
+
+  .cta-banner__heading {
+    font-size: 1.65rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+
+/* =============================================================
+   11. FOOTER
+   ============================================================= */
+.site-footer {
+  background-color: var(--color-very-dark-violet);
+  padding-block: 3.5rem;
+}
+
+.site-footer__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.site-footer__logo {
+  filter: brightness(0) invert(1);
+  height: 1.5rem;
+  width: auto;
+}
+
+.site-footer__nav {
+  display: flex;
+  gap: 5rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.site-footer__col-heading {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.site-footer__link {
+  color: var(--color-gray);
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-fast);
+}
+
+.site-footer__link:hover,
+.site-footer__link:focus-visible {
+  color: var(--color-cyan);
+}
+
+.site-footer__social {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-footer__social-link {
+  display: block;
+  line-height: 0; 
+  transition: opacity var(--transition-fast);
+}
+
+.site-footer__social-link img {
+  filter: brightness(0) invert(1);
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: filter var(--transition-fast);
+}
+
+.site-footer__social-link:hover img,
+.site-footer__social-link:focus-visible img {
+  filter: brightness(0) saturate(100%) invert(67%) sepia(62%)
+    saturate(469%) hue-rotate(127deg) brightness(97%) contrast(87%);
+}
+
+/* ---- Footer Mobile ---- */
+@media (max-width: 991.98px) {
+  .site-footer {
+    padding-block: 3rem;
+    text-align: center;
+  }
+
+  .site-footer__inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .site-footer__nav {
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .site-footer__links {
+    align-items: center;
+  }
+
+  .site-footer__social {
+    gap: 1.5rem;
   }
 }

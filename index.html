@@ -57,7 +57,7 @@
             />
           </a>
 
-          <!-- Hamburger toggle (mobile only) -->
+          <!-- Hamburger toggle -->
           <button
             class="navbar-toggler ms-auto"
             type="button"
@@ -73,7 +73,7 @@
           <!-- Collapsible nav content -->
           <div class="collapse navbar-collapse" id="primary-nav">
             <!-- Left nav links -->
-            <ul class="navbar__nav nav ms-md-4 me-auto" role="list">
+            <ul class="navbar__nav nav ms-lg-4 me-auto" role="list">
               <li class="nav-item">
                 <a class="nav-link" href="#">Features</a>
               </li>
@@ -90,14 +90,12 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Login</a>
               </li>
-              <li class="nav-item ms-md-2">
+              <li class="nav-item ms-lg-2">
                 <a class="btn-cyan" href="#" role="button">Sign Up</a>
               </li>
             </ul>
           </div>
-          <!-- /navbar-collapse -->
         </div>
-        <!-- /container -->
       </nav>
     </header>
 
@@ -271,14 +269,97 @@
       <!-- =============================================
            CTA BANNER
            ============================================= -->
-      <section class="cta-banner" aria-label="Call to action">
+      <section class="cta-banner" aria-labelledby="cta-heading">
+        <div class="container-shortly cta-banner__inner text-center">
+          <h2 class="cta-banner__heading" id="cta-heading">
+            Boost your links today
+          </h2>
+          <a href="#shorten-form" class="btn-cyan cta-banner__btn">
+            Get Started
+          </a>
+        </div>
       </section>
     </main>
 
     <!-- =============================================
          FOOTER
          ============================================= -->
-    <footer class="site-footer" role="contentinfo"></footer>
+    <footer class="site-footer" role="contentinfo">
+      <div class="container-shortly site-footer__inner">
+
+        <!-- Logo -->
+        <a href="/" class="site-footer__logo-link" aria-label="Shortly home">
+          <img
+            src="images/logo.svg"
+            alt="Shortly"
+            class="site-footer__logo"
+            width="121"
+            height="33"
+          />
+        </a>
+
+        <!-- Link columns -->
+        <nav class="site-footer__nav" aria-label="Footer navigation">
+
+          <!-- Features -->
+          <div class="site-footer__col">
+            <h3 class="site-footer__col-heading">Features</h3>
+            <ul class="site-footer__links">
+              <li><a href="#" class="site-footer__link">Link Shortening</a></li>
+              <li><a href="#" class="site-footer__link">Branded Links</a></li>
+              <li><a href="#" class="site-footer__link">Analytics</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div class="site-footer__col">
+            <h3 class="site-footer__col-heading">Resources</h3>
+            <ul class="site-footer__links">
+              <li><a href="#" class="site-footer__link">Blog</a></li>
+              <li><a href="#" class="site-footer__link">Developers</a></li>
+              <li><a href="#" class="site-footer__link">Support</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="site-footer__col">
+            <h3 class="site-footer__col-heading">Company</h3>
+            <ul class="site-footer__links">
+              <li><a href="#" class="site-footer__link">About</a></li>
+              <li><a href="#" class="site-footer__link">Our Team</a></li>
+              <li><a href="#" class="site-footer__link">Careers</a></li>
+              <li><a href="#" class="site-footer__link">Contact</a></li>
+            </ul>
+          </div>
+
+        </nav>
+
+        <!-- Social icons -->
+        <ul class="site-footer__social" aria-label="Social media links">
+          <li>
+            <a href="#" class="site-footer__social-link" aria-label="Facebook">
+              <img src="images/icon-facebook.svg" alt="" width="20" height="20" />
+            </a>
+          </li>
+          <li>
+            <a href="#" class="site-footer__social-link" aria-label="Twitter">
+              <img src="images/icon-twitter.svg" alt="" width="20" height="20" />
+            </a>
+          </li>
+          <li>
+            <a href="#" class="site-footer__social-link" aria-label="Pinterest">
+              <img src="images/icon-pinterest.svg" alt="" width="20" height="20" />
+            </a>
+          </li>
+          <li>
+            <a href="#" class="site-footer__social-link" aria-label="Instagram">
+              <img src="images/icon-instagram.svg" alt="" width="20" height="20" />
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </footer>
 
     <!-- Bootstrap 5 JS Bundle -->
     <script
