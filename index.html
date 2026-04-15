@@ -44,7 +44,7 @@
          HEADER / NAVBAR
          ============================================= -->
     <header class="site-header">
-      <nav class="navbar navbar-expand-md" aria-label="Primary navigation">
+      <nav class="navbar navbar-expand-lg" aria-label="Primary navigation">
         <div class="container-shortly d-flex align-items-center w-100">
           <!-- Logo -->
           <a class="navbar-brand p-0" href="/" aria-label="Shortly home">
@@ -85,9 +85,6 @@
               </li>
             </ul>
 
-            <!-- Divider: hidden on desktop, visible as horizontal rule inside mobile card -->
-            <hr class="navbar__mobile-divider d-md-none" aria-hidden="true" />
-
             <!-- Right auth links -->
             <ul class="navbar__auth nav align-items-center" role="list">
               <li class="nav-item">
@@ -112,7 +109,7 @@
         <div class="container-shortly hero__inner">
           <div class="row align-items-center">
             <!-- Text column -->
-            <div class="col-12 col-md-6 hero__text-col order-2 order-md-1">
+            <div class="col-12 col-lg-6 hero__text-col order-2 order-lg-1">
               <h1 class="hero__heading">More than just shorter links</h1>
               <p class="hero__subtext">
                 Build your brand's recognition and get detailed insights on how
@@ -122,7 +119,7 @@
             </div>
 
             <!-- Illustration column -->
-            <div class="col-12 col-md-6 hero__img-col order-1 order-md-2">
+            <div class="col-12 col-lg-6 hero__img-col order-1 order-lg-2">
               <div class="hero__img-wrapper">
                 <img
                   src="images/illustration-working.svg"
@@ -134,9 +131,7 @@
               </div>
             </div>
           </div>
-          <!-- /row -->
         </div>
-        <!-- /container -->
       </section>
 
       <!-- =============================================
@@ -148,7 +143,6 @@
         <!-- URL SHORTENER FORM + RESULTS -->
         <section class="shortener" id="shorten-form" aria-label="URL Shortener">
           <div class="container-shortly">
-            <!-- Dark purple card with SVG background -->
             <div class="shortener__card">
               <form class="shortener__form" id="url-form" novalidate>
                 <!-- Input + error -->
@@ -192,18 +186,93 @@
             ></ul>
           </div>
         </section>
-        <!-- /shortener -->
 
         <!-- =============================================
              ADVANCED STATISTICS
              ============================================= -->
-        <section class="statistics" aria-labelledby="stats-heading"></section>
+        <section class="statistics" aria-labelledby="stats-heading">
+          <div class="container-shortly">
+            <!-- Section heading -->
+            <div class="statistics__intro text-center">
+              <h2 class="statistics__heading" id="stats-heading">
+                Advanced Statistics
+              </h2>
+              <p class="statistics__subtext">
+                Track how your links are performing across the web with our
+                advanced statistics dashboard.
+              </p>
+            </div>
+
+            <!-- Cards wrapper -->
+            <div class="statistics__cards row justify-content-center">
+              <!-- Card 1 -->
+              <div class="col-12 col-lg-4 statistics__col statistics__col--1">
+                <article class="statistics__card">
+                  <div class="statistics__icon-badge" aria-hidden="true">
+                    <img
+                      src="images/icon-brand-recognition.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                    />
+                  </div>
+                  <h3 class="statistics__card-title">Brand Recognition</h3>
+                  <p class="statistics__card-body">
+                    Boost your brand recognition with each click. Generic links
+                    don't mean a thing. Branded links help instil confidence in
+                    your content.
+                  </p>
+                </article>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="col-12 col-lg-4 statistics__col statistics__col--2">
+                <article class="statistics__card">
+                  <div class="statistics__icon-badge" aria-hidden="true">
+                    <img
+                      src="images/icon-detailed-records.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                    />
+                  </div>
+                  <h3 class="statistics__card-title">Detailed Records</h3>
+                  <p class="statistics__card-body">
+                    Gain insights into who is clicking your links. Knowing when
+                    and where people engage with your content helps inform
+                    better decisions.
+                  </p>
+                </article>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="col-12 col-lg-4 statistics__col statistics__col--3">
+                <article class="statistics__card">
+                  <div class="statistics__icon-badge" aria-hidden="true">
+                    <img
+                      src="images/icon-fully-customizable.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                    />
+                  </div>
+                  <h3 class="statistics__card-title">Fully Customizable</h3>
+                  <p class="statistics__card-body">
+                    Improve brand awareness and content discoverability through
+                    customizable links, supercharging audience engagement.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
       <!-- =============================================
            CTA BANNER
            ============================================= -->
-      <section class="cta-banner" aria-label="Call to action"></section>
+      <section class="cta-banner" aria-label="Call to action">
+      </section>
     </main>
 
     <!-- =============================================
