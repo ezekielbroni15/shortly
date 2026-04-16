@@ -43,8 +43,8 @@
     <!-- =============================================
          HEADER / NAVBAR
          ============================================= -->
-    <header class="site-header">
-      <nav class="navbar navbar-expand-lg" aria-label="Primary navigation">
+    <header class="site-header sticky-top bg-white">
+      <nav class="navbar navbar-expand-lg py-4" aria-label="Primary navigation">
         <div class="container-shortly d-flex align-items-center w-100">
           <!-- Logo -->
           <a class="navbar-brand p-0" href="/" aria-label="Shortly home">
@@ -59,7 +59,7 @@
 
           <!-- Hamburger toggle -->
           <button
-            class="navbar-toggler ms-auto"
+            class="navbar-toggler ms-auto border-0 p-0 shadow-none"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#primary-nav"
@@ -71,7 +71,7 @@
           </button>
 
           <!-- Collapsible nav content -->
-          <div class="collapse navbar-collapse" id="primary-nav">
+          <div class="collapse navbar-collapse text-center" id="primary-nav">
             <!-- Left nav links -->
             <ul class="navbar__nav nav ms-lg-4 me-auto" role="list">
               <li class="nav-item">
@@ -103,8 +103,8 @@
       <!-- =============================================
            HERO SECTION
            ============================================= -->
-      <section class="hero" aria-label="Hero">
-        <div class="container-shortly hero__inner">
+      <section class="hero text-center text-lg-start" aria-label="Hero">
+        <div class="container-shortly hero__inner position-relative">
           <div class="row align-items-center">
             <!-- Text column -->
             <div class="col-12 col-lg-6 hero__text-col order-2 order-lg-1">
@@ -117,7 +117,9 @@
             </div>
 
             <!-- Illustration column -->
-            <div class="col-12 col-lg-6 hero__img-col order-1 order-lg-2">
+            <div
+              class="col-12 col-lg-6 hero__img-col order-1 order-lg-2 position-relative d-flex align-items-center"
+            >
               <div class="hero__img-wrapper">
                 <img
                   src="images/illustration-working.svg"
@@ -139,15 +141,25 @@
            ============================================= -->
       <div class="gray-section">
         <!-- URL SHORTENER FORM + RESULTS -->
-        <section class="shortener" id="shorten-form" aria-label="URL Shortener">
+        <section
+          class="shortener position-relative"
+          id="shorten-form"
+          aria-label="URL Shortener"
+        >
           <div class="container-shortly">
-            <div class="shortener__card">
-              <form class="shortener__form" id="url-form" novalidate>
+            <div class="shortener__card position-relative">
+              <form
+                class="shortener__form d-flex align-items-start"
+                id="url-form"
+                novalidate
+              >
                 <!-- Input + error -->
-                <div class="shortener__input-group">
+                <div
+                  class="shortener__input-group flex-grow-1 position-relative"
+                >
                   <input
                     type="url"
-                    class="shortener__input"
+                    class="shortener__input w-100"
                     id="url-input"
                     placeholder="Shorten a link here..."
                     aria-label="Enter a URL to shorten"
@@ -155,7 +167,7 @@
                     autocomplete="off"
                   />
                   <p
-                    class="shortener__error"
+                    class="shortener__error mb-0"
                     id="error-msg"
                     role="alert"
                     aria-live="assertive"
@@ -167,7 +179,7 @@
                 <!-- Submit button -->
                 <button
                   type="submit"
-                  class="btn-cyan shortener__btn"
+                  class="btn-cyan shortener__btn flex-shrink-0 text-nowrap"
                   id="shorten-btn"
                 >
                   Shorten It!
@@ -176,7 +188,7 @@
             </div>
 
             <ul
-              class="shortener__results"
+              class="shortener__results mt-4"
               id="results-list"
               role="list"
               aria-label="Shortened links"
@@ -192,21 +204,30 @@
           <div class="container-shortly">
             <!-- Section heading -->
             <div class="statistics__intro text-center">
-              <h2 class="statistics__heading" id="stats-heading">
+              <h2 class="statistics__heading mb-3" id="stats-heading">
                 Advanced Statistics
               </h2>
-              <p class="statistics__subtext">
+              <p class="statistics__subtext mx-auto">
                 Track how your links are performing across the web with our
                 advanced statistics dashboard.
               </p>
             </div>
 
             <!-- Cards wrapper -->
-            <div class="statistics__cards row justify-content-center">
+            <div
+              class="statistics__cards row justify-content-center align-items-start"
+            >
               <!-- Card 1 -->
-              <div class="col-12 col-lg-4 statistics__col statistics__col--1">
-                <article class="statistics__card">
-                  <div class="statistics__icon-badge" aria-hidden="true">
+              <div
+                class="col-12 col-lg-4 statistics__col statistics__col--1 position-relative z-1"
+              >
+                <article
+                  class="statistics__card position-relative text-center text-lg-start"
+                >
+                  <div
+                    class="statistics__icon-badge d-flex align-items-center justify-content-center"
+                    aria-hidden="true"
+                  >
                     <img
                       src="images/icon-brand-recognition.svg"
                       alt=""
@@ -215,7 +236,7 @@
                     />
                   </div>
                   <h3 class="statistics__card-title">Brand Recognition</h3>
-                  <p class="statistics__card-body">
+                  <p class="statistics__card-body mb-0">
                     Boost your brand recognition with each click. Generic links
                     don't mean a thing. Branded links help instil confidence in
                     your content.
@@ -224,9 +245,16 @@
               </div>
 
               <!-- Card 2 -->
-              <div class="col-12 col-lg-4 statistics__col statistics__col--2">
-                <article class="statistics__card">
-                  <div class="statistics__icon-badge" aria-hidden="true">
+              <div
+                class="col-12 col-lg-4 statistics__col statistics__col--2 position-relative z-1"
+              >
+                <article
+                  class="statistics__card position-relative text-center text-lg-start"
+                >
+                  <div
+                    class="statistics__icon-badge d-flex align-items-center justify-content-center"
+                    aria-hidden="true"
+                  >
                     <img
                       src="images/icon-detailed-records.svg"
                       alt=""
@@ -235,7 +263,7 @@
                     />
                   </div>
                   <h3 class="statistics__card-title">Detailed Records</h3>
-                  <p class="statistics__card-body">
+                  <p class="statistics__card-body mb-0">
                     Gain insights into who is clicking your links. Knowing when
                     and where people engage with your content helps inform
                     better decisions.
@@ -244,9 +272,16 @@
               </div>
 
               <!-- Card 3 -->
-              <div class="col-12 col-lg-4 statistics__col statistics__col--3">
-                <article class="statistics__card">
-                  <div class="statistics__icon-badge" aria-hidden="true">
+              <div
+                class="col-12 col-lg-4 statistics__col statistics__col--3 position-relative z-1"
+              >
+                <article
+                  class="statistics__card position-relative text-center text-lg-start"
+                >
+                  <div
+                    class="statistics__icon-badge d-flex align-items-center justify-content-center"
+                    aria-hidden="true"
+                  >
                     <img
                       src="images/icon-fully-customizable.svg"
                       alt=""
@@ -255,7 +290,7 @@
                     />
                   </div>
                   <h3 class="statistics__card-title">Fully Customizable</h3>
-                  <p class="statistics__card-body">
+                  <p class="statistics__card-body mb-0">
                     Improve brand awareness and content discoverability through
                     customizable links, supercharging audience engagement.
                   </p>
@@ -271,7 +306,7 @@
            ============================================= -->
       <section class="cta-banner" aria-labelledby="cta-heading">
         <div class="container-shortly cta-banner__inner text-center">
-          <h2 class="cta-banner__heading" id="cta-heading">
+          <h2 class="cta-banner__heading text-white" id="cta-heading">
             Boost your links today
           </h2>
           <a href="#shorten-form" class="btn-cyan cta-banner__btn">
@@ -285,7 +320,9 @@
          FOOTER
          ============================================= -->
     <footer class="site-footer" role="contentinfo">
-      <div class="container-shortly site-footer__inner">
+      <div
+        class="container-shortly site-footer__inner d-flex justify-content-between"
+      >
         <!-- Logo -->
         <a href="/" class="site-footer__logo-link" aria-label="Shortly home">
           <img
@@ -298,11 +335,14 @@
         </a>
 
         <!-- Link columns -->
-        <nav class="site-footer__nav" aria-label="Footer navigation">
+        <nav
+          class="site-footer__nav d-flex flex-grow-1 justify-content-center"
+          aria-label="Footer navigation"
+        >
           <!-- Features -->
           <div class="site-footer__col">
-            <h3 class="site-footer__col-heading">Features</h3>
-            <ul class="site-footer__links">
+            <h3 class="site-footer__col-heading text-white">Features</h3>
+            <ul class="site-footer__links d-flex flex-column">
               <li><a href="#" class="site-footer__link">Link Shortening</a></li>
               <li><a href="#" class="site-footer__link">Branded Links</a></li>
               <li><a href="#" class="site-footer__link">Analytics</a></li>
@@ -311,8 +351,8 @@
 
           <!-- Resources -->
           <div class="site-footer__col">
-            <h3 class="site-footer__col-heading">Resources</h3>
-            <ul class="site-footer__links">
+            <h3 class="site-footer__col-heading text-white">Resources</h3>
+            <ul class="site-footer__links d-flex flex-column">
               <li><a href="#" class="site-footer__link">Blog</a></li>
               <li><a href="#" class="site-footer__link">Developers</a></li>
               <li><a href="#" class="site-footer__link">Support</a></li>
@@ -321,8 +361,8 @@
 
           <!-- Company -->
           <div class="site-footer__col">
-            <h3 class="site-footer__col-heading">Company</h3>
-            <ul class="site-footer__links">
+            <h3 class="site-footer__col-heading text-white">Company</h3>
+            <ul class="site-footer__links d-flex flex-column">
               <li><a href="#" class="site-footer__link">About</a></li>
               <li><a href="#" class="site-footer__link">Our Team</a></li>
               <li><a href="#" class="site-footer__link">Careers</a></li>
@@ -332,9 +372,16 @@
         </nav>
 
         <!-- Social icons -->
-        <ul class="site-footer__social" aria-label="Social media links">
+        <ul
+          class="site-footer__social d-flex align-items-center gap-4"
+          aria-label="Social media links"
+        >
           <li>
-            <a href="#" class="site-footer__social-link" aria-label="Facebook">
+            <a
+              href="#"
+              class="site-footer__social-link d-block"
+              aria-label="Facebook"
+            >
               <img
                 src="images/icon-facebook.svg"
                 alt=""
@@ -344,7 +391,11 @@
             </a>
           </li>
           <li>
-            <a href="#" class="site-footer__social-link" aria-label="Twitter">
+            <a
+              href="#"
+              class="site-footer__social-link d-block"
+              aria-label="Twitter"
+            >
               <img
                 src="images/icon-twitter.svg"
                 alt=""
@@ -354,7 +405,11 @@
             </a>
           </li>
           <li>
-            <a href="#" class="site-footer__social-link" aria-label="Pinterest">
+            <a
+              href="#"
+              class="site-footer__social-link d-block"
+              aria-label="Pinterest"
+            >
               <img
                 src="images/icon-pinterest.svg"
                 alt=""
@@ -364,7 +419,11 @@
             </a>
           </li>
           <li>
-            <a href="#" class="site-footer__social-link" aria-label="Instagram">
+            <a
+              href="#"
+              class="site-footer__social-link d-block"
+              aria-label="Instagram"
+            >
               <img
                 src="images/icon-instagram.svg"
                 alt=""

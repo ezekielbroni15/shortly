@@ -58,14 +58,13 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -74,7 +73,7 @@ body {
   font-weight: var(--font-weight-medium);
   background-color: var(--color-bg-body);
   color: var(--color-grayish-violet);
-  overflow-x: hidden;
+  overflow-x: clip;
   line-height: 1.6;
 }
 
@@ -98,7 +97,6 @@ ul {
 button {
   cursor: pointer;
   border: none;
-  font-family: var(--font-family);
   font-weight: var(--font-weight-bold);
 }
 
@@ -128,7 +126,6 @@ p {
    4. UTILITIES / SHARED COMPONENTS
    ============================================================= */
 
-/* Teal pill button — used in Navbar, Hero, CTA */
 .btn-cyan {
   display: inline-block;
   background-color: var(--color-cyan);
@@ -146,47 +143,20 @@ p {
   color: #fff;
 }
 
-/* Page-width container override */
 .container-shortly {
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
 
-/* Attribution  */
-.attribution {
-  font-size: 0.6875rem;
-  text-align: center;
-  padding: 1rem;
-  color: var(--color-gray);
-}
-
-.attribution a {
-  color: var(--color-cyan);
-}
-
 /* =============================================================
    5. NAVBAR
    ============================================================= */
-.site-header {
-  background-color: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
 
-/* --- Bootstrap navbar overrides --- */
-.navbar {
-  padding-block: 1.5rem;
-}
-
-/* Logo */
 .navbar__logo {
   height: 1.5rem;
-  width: auto;
 }
 
-/* Nav links — shared styles for both .navbar__nav and .navbar__auth */
 .navbar__nav .nav-link,
 .navbar__auth .nav-link {
   color: var(--color-grayish-violet);
@@ -201,13 +171,6 @@ p {
 .navbar__auth .nav-link:hover,
 .navbar__auth .nav-link:focus-visible {
   color: var(--color-very-dark-blue);
-}
-
-/* Hamburger button */
-.navbar-toggler {
-  border: none;
-  padding: 0;
-  box-shadow: none !important;
 }
 
 .navbar-toggler:focus {
@@ -225,7 +188,6 @@ p {
     border-radius: 0.625rem;
     margin-top: 1.5rem;
     padding: 2.5rem 1.5rem;
-    text-align: center;
   }
 
   .navbar__mobile-divider {
@@ -234,7 +196,6 @@ p {
     opacity: 0.25;
   }
 
-  /* Mobile nav links override */
   .navbar__nav .nav-link,
   .navbar__auth .nav-link {
     color: #fff;
@@ -257,7 +218,7 @@ p {
 }
 
 /* =============================================================
-   6. HERO - Refined for Pixel Perfection
+   6. HERO SECTION
    ============================================================= */
 .hero {
   padding-top: 2rem;
@@ -265,11 +226,6 @@ p {
   overflow-x: clip;
 }
 
-.hero__inner {
-  position: relative;
-}
-
-/* ---- Text column ---- */
 .hero__text-col {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -292,20 +248,11 @@ p {
   margin-bottom: 2.2rem;
 }
 
-/* ---- Illustration column ---- */
-.hero__img-col {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
 .hero__illustration {
   height: auto;
   object-fit: contain;
   max-width: none;
 }
-
-/* ---- Responsive Adjustments ---- */
 
 @media (min-width: 992px) {
   .hero {
@@ -319,12 +266,7 @@ p {
   }
 }
 
-/* Mobile Specific */
 @media (max-width: 991.98px) {
-  .hero {
-    text-align: center;
-  }
-
   .hero__img-col {
     order: -1;
     margin-bottom: 2rem;
@@ -358,7 +300,6 @@ p {
 }
 
 .shortener {
-  position: relative;
   padding-bottom: 2rem;
 }
 .shortener__card {
@@ -370,24 +311,14 @@ p {
   border-radius: 0.625rem;
   padding: 3.25rem;
   margin-top: -5.25rem;
-  position: relative;
   z-index: 10;
 }
 
 .shortener__form {
-  display: flex;
   gap: 1.5rem;
-  align-items: flex-start;
 }
 
-.shortener__input-group {
-  flex-grow: 1;
-  position: relative;
-}
-
-/* The URL text input */
 .shortener__input {
-  width: 100%;
   height: 4rem;
   border-radius: 0.625rem;
   border: 3px solid transparent;
@@ -422,7 +353,6 @@ p {
   font-style: italic;
   font-size: 0.875rem;
   margin-top: 0.4rem;
-  margin-bottom: 0;
 }
 
 .shortener__form.is-error .shortener__error {
@@ -434,16 +364,11 @@ p {
   font-size: 1rem;
   padding: 0 2.2rem;
   height: 4rem;
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 
 /* =============================================================
    8. RESULTS LIST
    ============================================================= */
-.shortener__results {
-  margin-top: 1.5rem;
-}
 
 .shortener__result-item {
   background-color: #fff;
@@ -482,7 +407,6 @@ p {
   background-color: var(--color-dark-violet);
 }
 
-/* ---- Shortener + Results Mobile ---- */
 @media (max-width: 991.98px) {
   .shortener__card {
     background-image: url("../images/bg-shorten-mobile.svg");
@@ -575,7 +499,6 @@ p {
 
 .statistics__heading {
   font-size: clamp(1.75rem, 3vw, 2.35rem);
-  margin-bottom: 1rem;
   letter-spacing: -0.5px;
 }
 
@@ -583,13 +506,11 @@ p {
   color: var(--color-grayish-violet);
   font-size: 1rem;
   line-height: 1.8;
-  margin: 0 auto;
 }
 
 .statistics__cards {
   position: relative;
   --bs-gutter-x: 1.875rem;
-  align-items: flex-start;
 }
 
 .statistics__cards::before {
@@ -603,11 +524,6 @@ p {
   z-index: 0;
 }
 
-.statistics__col {
-  position: relative;
-  z-index: 1;
-}
-
 .statistics__col--2 {
   margin-top: 2.75rem;
 }
@@ -617,7 +533,6 @@ p {
 }
 
 .statistics__card {
-  position: relative;
   background-color: #fff;
   border-radius: 0.35rem;
   padding: 4.9rem 2rem 2.2rem;
@@ -632,9 +547,6 @@ p {
   height: 5.5rem;
   border-radius: 50%;
   background-color: var(--color-dark-violet);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 2;
 }
 
@@ -654,7 +566,6 @@ p {
   font-size: 0.94rem;
   line-height: 1.9;
   color: var(--color-grayish-violet);
-  margin-bottom: 0;
 }
 
 /* =============================================================
@@ -680,15 +591,9 @@ p {
     margin: 0;
     border-radius: 0.35rem;
     padding: 5.5rem 1.75rem 2.5rem;
-    text-align: center;
-  }
-
-  .statistics__card-title {
-    text-align: center;
   }
 
   .statistics__card-body {
-    text-align: center;
     max-width: 34ch;
     margin-inline: auto;
   }
@@ -726,7 +631,6 @@ p {
 }
 
 .cta-banner__heading {
-  color: #fff;
   font-size: clamp(1.6rem, 3.5vw, 2.5rem);
   margin-bottom: 2rem;
 }
@@ -759,27 +663,20 @@ p {
 }
 
 .site-footer__inner {
-  display: flex;
   align-items: flex-start;
-  justify-content: space-between;
   gap: 3rem;
 }
 
 .site-footer__logo {
   filter: brightness(0) invert(1);
   height: 1.5rem;
-  width: auto;
 }
 
 .site-footer__nav {
-  display: flex;
   gap: 5rem;
-  flex: 1;
-  justify-content: center;
 }
 
 .site-footer__col-heading {
-  color: #fff;
   font-size: 0.9rem;
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.05em;
@@ -787,8 +684,6 @@ p {
 }
 
 .site-footer__links {
-  display: flex;
-  flex-direction: column;
   gap: 0.6rem;
 }
 
@@ -804,14 +699,7 @@ p {
   color: var(--color-cyan);
 }
 
-.site-footer__social {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
 .site-footer__social-link {
-  display: block;
   line-height: 0;
   transition: opacity var(--transition-fast);
 }
@@ -851,9 +739,5 @@ p {
 
   .site-footer__links {
     align-items: center;
-  }
-
-  .site-footer__social {
-    gap: 1.5rem;
   }
 }
