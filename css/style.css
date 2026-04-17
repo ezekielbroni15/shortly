@@ -184,10 +184,16 @@ p {
 
 @media (max-width: 991.98px) {
   .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 1.5rem;
+    right: 1.5rem;
     background-color: var(--color-dark-violet);
     border-radius: 0.625rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     padding: 2.5rem 1.5rem;
+    z-index: 1000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   }
 
   .navbar__mobile-divider {
@@ -214,6 +220,7 @@ p {
     width: 100%;
     padding-block: 0.85rem;
     margin-top: 0.5rem;
+    font-size: 1.125rem;
   }
 }
 
