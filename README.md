@@ -1,56 +1,89 @@
-# Shortly – URL Shortening Landing Page
+# Shortly URL Shortening Landing Page
 
-![Shortly preview](../preview.jpg)
+A responsive landing page for the Shortly URL shortening service, built from the Frontend Mentor challenge design. The project combines a marketing-style landing page with a working URL shortener, client-side validation, persistent results, and a mobile navigation experience.
 
 ## Overview
 
-A responsive landing page for **Shortly**, a URL shortening service. Built as a [Frontend Mentor](https://www.frontendmentor.io) challenge.
+This project recreates the Shortly landing page and adds the required interactive behavior for shortening links. Users can enter a URL, receive a shortened version, copy it to the clipboard, and revisit previously shortened links after a refresh thanks to `localStorage`.
 
 ## Features
 
-- Shorten any valid URL using the [CleanURI API](https://cleanuri.com/docs)
-- Shortened links persist across page refreshes (localStorage)
-- Copy any shortened link to the clipboard in one click
-- Responsive layout — optimised for 375px (mobile) through 1440px (desktop)
-- Empty-input validation with inline error messaging
-- Mobile hamburger navigation
+- Responsive layout for mobile, tablet, and desktop screens
+- Mobile hamburger navigation using Bootstrap collapse
+- URL validation with inline error messaging
+- URL shortening with an external API
+- Fallback shortening flow if the primary service fails
+- Copy-to-clipboard support with button state feedback
+- Persistent shortened links using `localStorage`
+- Accessible, semantic page structure
 
-## Tech Stack
+## Built With
 
-| Layer | Choice | Reason |
-|---|---|---|
-| Structure | HTML5 (semantic) | Clean, accessible markup |
-| Layout & responsiveness | Bootstrap 5 (CDN) | Grid system + navbar utilities |
-| Styling | Vanilla CSS (`css/style.css`) | Full control, no utility-class bloat |
-| Behaviour | Vanilla JavaScript (`js/main.js`) | No framework overhead needed |
-| Font | Poppins (Google Fonts) | Matches design spec exactly |
-| API | CleanURI `POST /api/v1/shorten` | Free, no auth required |
+- HTML5
+- CSS3
+- Bootstrap 5
+- Vanilla JavaScript
+- Google Fonts (`Poppins`)
+- `is.gd` API with `CleanURI` as fallback
 
-## Approach
+## My Approach
 
-1. **Scaffold first** – semantic HTML shell before any styling
-2. **Design tokens upfront** – all colours and type set as CSS custom properties
-3. **Mobile-first** – base styles target 375 px, then scale up with `min-width` media queries
-4. **Progressive enhancement** – page is readable even without JS; JS adds the interactive shortening layer
-5. **Atomic commits** – each feature phase is its own commit so the git history tells the story
+I treated the project as a static landing page first and then layered the interactivity on top.
+
+- I built the page structure with semantic HTML sections so the layout stayed readable and easy to maintain.
+- I used Bootstrap mainly for layout utilities and the responsive navbar behavior, while keeping the visual styling in a custom stylesheet so the design could closely match the challenge.
+- I organized the CSS into clear sections such as design tokens, shared components, navbar, hero, form, statistics, CTA, and footer. This made it easier to style each part without mixing unrelated rules together.
+- I kept the JavaScript framework-free and split it into small responsibilities: validation, storage helpers, rendering, copy behavior, and API requests.
+- For reliability, the shortening logic tries `is.gd` first and falls back to `CleanURI` if the first service fails.
+- I stored the most recent shortened links in `localStorage` so the user experience feels continuous even after a page refresh.
+
+## Implementation Notes
+
+- The app automatically normalizes URLs that do not include `http://` or `https://` by attempting to prepend `https://`.
+- Shortened links are rendered dynamically into the results list and can be copied with a single click.
+- Clipboard copying uses the modern Clipboard API when available and falls back to `document.execCommand("copy")` for broader support.
+- The app keeps up to 10 saved links in local storage.
 
 ## Project Structure
 
-```
+```text
 shortly/
-├── index.html          # Single-page app shell
-├── css/
-│   └── style.css       # All custom styles (design tokens → components → sections)
-├── js/
-│   └── main.js         # API calls, DOM rendering, clipboard, localStorage
-└── images/             # All SVG / PNG assets
+|-- index.html
+|-- css/
+|   `-- style.css
+|-- js/
+|   `-- main.js
+|-- images/
+|-- README.md
+`-- style-guide.md
 ```
 
-## Running Locally
+## Getting Started
 
-No build step required. Open `index.html` directly in a browser, or use the VS Code **Live Server** extension.
+### Prerequisites
 
-## Author
+- A modern web browser
+- Internet access for Bootstrap CDN, Google Fonts, and the shortening APIs
+- A simple local server such as VS Code Live Server
 
-- Frontend Mentor profile – [@YourHandle](https://www.frontendmentor.io/profile/YourHandle)
-- GitHub – [@YourHandle](https://github.com/YourHandle)
+### Run Locally
+
+1. Clone or download this repository.
+2. Open the project folder.
+3. Start a local server from the project root.
+4. Open the served URL in your browser.
+
+Because the app makes external API requests, running it from a local server is recommended instead of opening `index.html` with `file://`.
+
+## What I Focused On
+
+- Matching the challenge layout closely across breakpoints
+- Keeping the code readable and sectioned clearly
+- Making the URL shortener feel smooth and practical to use
+- Preserving results between sessions with minimal complexity
+- Adding graceful fallbacks for clipboard and API behavior
+
+## Acknowledgements
+
+- Challenge by [Frontend Mentor](https://www.frontendmentor.io/)
+- URL shortening powered by [is.gd](https://is.gd/) and [CleanURI](https://cleanuri.com/)
